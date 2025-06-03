@@ -7,9 +7,12 @@ def menu():
     print("--------------------------------------------")
     opcao = input("Digite a opção desejada: ")
     return opcao
-
+    
 while True:
     opcao = menu()
+    while opcao != "1" and opcao != "2" and opcao != "3":
+        print("Opção inválida!")
+        opcao = menu()
     if opcao == "1":
         qtd_pallets_cat_1 = float(input("QTD Pallets CAT-1: "))
         qtd_pallets_cat_2 = float(input("QTD Pallets CAT-2: "))
@@ -49,10 +52,7 @@ while True:
         print(f"Você precisa de {qtd_etq_p_caixa} ROLOS DE ETQ P/ CAIXA")
         print(f"Você precisa de {qtd_generador} UND DE GENERADORES")
         print(f"Você precisa de {qtd_cantoneira} UND DE CANTONEIRAS")
-        break
+        break        
     elif opcao == "3":
         print("Encerrando Programa...")
         break
-    else:
-        print("Opção inválida")
-        menu()
